@@ -6,6 +6,15 @@ from django.utils import timezone
 class Flat(models.Model):
     owner = models.CharField('ФИО владельца', max_length=200)
     owners_phonenumber = models.CharField('Номер владельца', max_length=20)
+    new_building = models.BooleanField(
+        'New building',
+        choices=[
+            (None, 'Неизвестно'),
+            (True, 'Новостройка'),
+            (False, 'Старое здание'),
+        ],
+        null=True
+    )
     created_at = models.DateTimeField(
         'Когда создано объявление',
         default=timezone.now,
@@ -54,4 +63,4 @@ class Flat(models.Model):
 
 class FlatAdmin(admin.ModelAdmin):
     search_fields = ('town', 'address', 'owner',)
-    readonly_fields = ('created_at', )
+    readonly_fields = ('created_at',)
