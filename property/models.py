@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.db import models
 from django.utils import timezone
 
@@ -49,3 +50,7 @@ class Flat(models.Model):
 
     def __str__(self):
         return f'{self.town}, {self.address} ({self.price}р.)'
+
+
+class FlatAdmin(admin.ModelAdmin):
+    search_fields = ('town', 'address', 'owner',)
