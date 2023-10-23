@@ -5,9 +5,21 @@
 ## Запуск
 
 - Скачайте код
-- Установите зависимости командой `pip install -r requirements.txt`
-- Создайте файл базы данных и сразу примените все миграции командой `python3 manage.py migrate`
-- Запустите сервер командой `python3 manage.py runserver`
+```bash
+git clone https://github.com/shadowsking/real_estate_agency.git
+```
+- Установите зависимости командой
+```shell
+pip install -r requirements.txt
+```
+- Создайте файл базы данных и сразу примените все миграции командой
+```shell
+python3 manage.py migrate
+```
+- Запустите сервер командой
+```shell
+python3 manage.py runserver
+```
 
 ## Переменные окружения
 
