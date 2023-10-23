@@ -96,7 +96,7 @@ class Owner(models.Model):
     phonenumber = models.CharField('Номер владельца', max_length=20)
     pure_phone = PhoneNumberField('Нормализованный номер владельца', blank=True)
     flats = models.ManyToManyField(
-        User,
+        Flat,
         verbose_name='Квартиры в собственности',
         related_name='owners',
         blank=True
