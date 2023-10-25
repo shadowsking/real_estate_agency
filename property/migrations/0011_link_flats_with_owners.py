@@ -9,7 +9,7 @@ def link_flats(apps, schema_editor):
 
     owner_flats = {}
     flats = Flat.objects.all()
-    for flat in flats:
+    for flat in flats.iterator():
         owner, created = Owner.objects.get_or_create(
             name=flat.owner,
             phonenumber=flat.owners_phonenumber,
